@@ -2,7 +2,8 @@ FROM nginx:alpine
 
 # Copy static files to nginx html directory
 COPY index.html /usr/share/nginx/html/
-COPY "Verse 1.mp3" "Verse 1 (2).mp3" /usr/share/nginx/html/
+COPY ["Verse 1.mp3", "/usr/share/nginx/html/"]
+COPY ["Verse 1 (2).mp3", "/usr/share/nginx/html/"]
 
 # Create non-root user and switch to it
 RUN addgroup -g 1000 appuser && \
